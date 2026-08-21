@@ -216,7 +216,7 @@ class Classfier(nn.Module):
             return classifier
 
 class RepViT(nn.Module):
-    def __init__(self, cfgs, num_classes=1000, distillation=False):
+    def __init__(self, cfgs, num_classes=17, distillation=False):
         super(RepViT, self).__init__()
         # setting of inverted residual blocks
         self.cfgs = cfgs
@@ -244,10 +244,7 @@ class RepViT(nn.Module):
         x = self.classifier(x)
         return x
 
-from timm.models import register_model
 
-
-@register_model
 def repvit_m0_6(pretrained=False, num_classes = 1000, distillation=False):
     """
     Constructs a MobileNetV3-Large model
@@ -273,7 +270,6 @@ def repvit_m0_6(pretrained=False, num_classes = 1000, distillation=False):
     ]
     return RepViT(cfgs, num_classes=num_classes, distillation=distillation)
 
-@register_model
 def repvit_m0_9(pretrained=False, num_classes = 1000, distillation=False):
     """
     Constructs a MobileNetV3-Large model
@@ -309,7 +305,6 @@ def repvit_m0_9(pretrained=False, num_classes = 1000, distillation=False):
     ]
     return RepViT(cfgs, num_classes=num_classes, distillation=distillation)
 
-@register_model
 def repvit_m1_0(pretrained=False, num_classes = 1000, distillation=False):
     """
     Constructs a MobileNetV3-Large model
@@ -346,7 +341,6 @@ def repvit_m1_0(pretrained=False, num_classes = 1000, distillation=False):
     return RepViT(cfgs, num_classes=num_classes, distillation=distillation)
 
 
-@register_model
 def repvit_m1_1(pretrained=False, num_classes = 1000, distillation=False):
     """
     Constructs a MobileNetV3-Large model
@@ -381,7 +375,6 @@ def repvit_m1_1(pretrained=False, num_classes = 1000, distillation=False):
     return RepViT(cfgs, num_classes=num_classes, distillation=distillation)
 
 
-@register_model
 def repvit_m1_5(pretrained=False, num_classes = 1000, distillation=False):
     """
     Constructs a MobileNetV3-Large model
@@ -434,8 +427,6 @@ def repvit_m1_5(pretrained=False, num_classes = 1000, distillation=False):
     return RepViT(cfgs, num_classes=num_classes, distillation=distillation)
 
 
-
-@register_model
 def repvit_m2_3(pretrained=False, num_classes = 1000, distillation=False):
     """
     Constructs a MobileNetV3-Large model
